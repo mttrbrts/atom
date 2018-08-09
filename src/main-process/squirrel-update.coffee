@@ -94,7 +94,7 @@ createShortcuts = (locations, callback) ->
 # provided by Squirrel's Update.exe
 updateShortcuts = (callback) ->
   if homeDirectory = fs.getHomeDirectory()
-    desktopShortcutPath = path.join(homeDirectory, 'Desktop', 'Atom.lnk')
+    desktopShortcutPath = path.join(homeDirectory, 'Desktop', 'Atom Nightly.lnk')
     # Check if the desktop shortcut has been previously deleted and
     # and keep it deleted if it was
     fs.exists desktopShortcutPath, (desktopShortcutExists) ->

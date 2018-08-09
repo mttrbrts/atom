@@ -15,6 +15,7 @@ const PanelContainer = require('./panel-container')
 const Task = require('./task')
 const WorkspaceCenter = require('./workspace-center')
 const WorkspaceElement = require('./workspace-element')
+const {app} = require('electron')
 
 const STOPPED_CHANGING_ACTIVE_PANE_ITEM_DELAY = 100
 const ALL_LOCATIONS = ['center', 'left', 'right', 'bottom']
@@ -560,7 +561,7 @@ module.exports = class Workspace extends Model {
   // open.
   updateWindowTitle () {
     let itemPath, itemTitle, projectPath, representedPath
-    const appName = 'Atom'
+    const appName = app.getName()
     const left = this.project.getPaths()
     const projectPaths = left != null ? left : []
     const item = this.getActivePaneItem()
